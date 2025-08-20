@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Пропадающая иконка</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .card {
+            border-radius: 32px;
+            background: #4F5872;
+            padding: 50px;
+            width: 100%;
+            max-width: 540px;
+        }
+
+        .title {
+            font-size: clamp(1.25rem, 0.9426rem + 1.3115vw, 2rem);
+            font-weight: 400;
+            line-height: normal;
+            padding-top: 82px;
+            position: relative;
+        }
+
+        .title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 58px;
+            height: 58px;
+            background-image: url('data:image/svg+xml,<svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_724_242)"><rect width="58" height="58" rx="12" fill="white"/><path d="M28.146 12.7586C28.2662 11.7471 29.7339 11.7471 29.854 12.7586L30.8608 21.2438C32.1608 32.2006 40.7994 40.8392 51.7561 42.1392L60.2413 43.146C61.2529 43.2662 61.2529 44.7339 60.2413 44.854L51.7561 45.8608C40.7994 47.1608 32.1608 55.7994 30.8608 66.7561L29.854 75.2413C29.7339 76.2529 28.2662 76.2529 28.146 75.2413L27.1392 66.7561C25.8392 55.7994 17.2006 47.1608 6.24385 45.8608L-2.2414 44.854C-3.25287 44.7339 -3.25287 43.2662 -2.2414 43.146L6.24385 42.1392C17.2006 40.8392 25.8392 32.2006 27.1392 21.2438L28.146 12.7586Z" fill="%234F5872"/></g><defs><clipPath id="clip0_724_242"><rect width="58" height="58" rx="12" fill="white"/></clipPath></defs></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .text {
+            font-size: clamp(1rem, 0.8975rem + 0.4372vw, 1.25rem);
+            margin-top: 16px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .card {
+                border-radius: 10px;
+                padding: 20px;
+            }
+
+            .title {
+                padding: 0;
+            }
+
+            .title::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article class="card">
+        <h3 class="title">Эффективность обучения</h3>
+        <p class="text">Одним из ключевых преимуществ хорошего тайм-менеджмента является повышение эффективности обучения. Вместо того чтобы тратить время на непродуктивные действия или многозадачность, которая часто приводит к снижению продуктивности, тайм-менеджмент помогает сосредоточиться на важных аспектах обучения, улучшая усвоение нового материала.</p>
+    </article>
+</body>
+</html>

@@ -1,0 +1,354 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    block-size: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img, svg, video, canvas {
+    display: block;
+    inline-size: 100%;
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+:root {
+    --accent: #FF8630;
+
+    --bg: #F7F8FA;
+    --surface: #FFFFFF;
+    --text: #1B1F24;
+    --muted: #6B7280;
+    --border: #E6E8EB;
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+
+    --shadow-sm: 0 6px 18px rgba(17, 24, 39, 0.06);
+    --shadow-md: 0 10px 30px rgba(17, 24, 39, 0.07);
+
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0B0E14;
+        --surface: #121826;
+        --text: #E5E7EB;
+        --muted: #9AA3AF;
+        --border: #232A39;
+
+        --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.35);
+        --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: radial-gradient(1200px 600px at 100% -10%, rgba(255, 134, 48, 0.08), rgba(255, 134, 48, 0) 60%),
+    radial-gradient(900px 500px at -20% 110%, rgba(255, 134, 48, 0.06), rgba(255, 134, 48, 0) 55%);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.header {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 10;
+    backdrop-filter: saturate(140%) blur(8px);
+    background: color-mix(in srgb, var(--bg) 80%, transparent);
+    border-block-end: 1px solid var(--border);
+}
+
+.header__title {
+    padding-block: 20px;
+    padding-inline: 24px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-size: clamp(20px, 1.6vw + 14px, 28px);
+}
+
+.content {
+    max-inline-size: 1000px;
+    inline-size: 100%;
+    margin-block: 24px;
+    margin-inline: auto;
+    padding-inline: 16px;
+    display: grid;
+    gap: 24px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    inline-size: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding-block: 22px;
+    padding-inline: 22px;
+    transition: box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease, background-color 200ms ease, color 200ms ease;
+}
+
+.section:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.section__title {
+    margin-block-end: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.section__content {
+    display: grid;
+    gap: 10px;
+}
+
+.blockquote {
+    position: relative;
+    padding-block: 22px;
+    padding-inline: 22px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(180deg, rgba(255, 134, 48, 0.08), rgba(255, 134, 48, 0.04));
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.blockquote::before {
+    content: "“";
+    position: absolute;
+    inset-block-start: -10px;
+    inset-inline-start: 14px;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1;
+    color: rgba(255, 134, 48, 0.3);
+    pointer-events: none;
+}
+
+.blockquote__text {
+    font-size: clamp(18px, 1.2vw + 14px, 24px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.blockquote__author {
+    margin-block-start: 2px;
+    margin-inline-end: 2px;
+    text-align: end;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.section__footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.button {
+    --btn-bg: var(--accent);
+    --btn-fg: #fff;
+    --btn-ring: rgba(255, 134, 48, 0.35);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding-block: 12px;
+    padding-inline: 16px;
+    border-radius: 12px;
+
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 60ms ease;
+}
+
+.button:hover {
+    background: color-mix(in srgb, var(--accent) 90%, #000 10%);
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:focus-visible {
+    box-shadow: 0 0 0 3px var(--btn-ring),
+    0 6px 18px rgba(17, 24, 39, 0.18);
+}
+
+.button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    transform: none;
+}
+
+.button_type_secondary {
+    --btn-bg: transparent;
+    --btn-fg: var(--text);
+    --btn-ring: rgba(255, 134, 48, 0.35);
+
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.button_type_secondary:hover {
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+.button_type_remove-quote {
+    --accent: #EF4444;
+    --btn-bg: #EF4444;
+    --btn-fg: #ffffff;
+    --btn-ring: rgba(239, 68, 68, 0.35);
+
+    color: var(--btn-fg);
+    background: var(--btn-bg);
+    border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.favorites__list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+}
+
+/* Пустой список: показываем текст-заглушку */
+.favorites__list:empty::before {
+    content: "Здесь будут ваши избранные цитаты";
+    display: block;
+    padding-block: 14px;
+    padding-inline: 14px;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--muted);
+    text-align: center;
+    background: var(--surface);
+}
+
+.favorites__list-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 10px;
+
+    padding-block: 14px;
+    padding-inline: 14px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.favorites__list-item:hover {
+    border-color: color-mix(in srgb, var(--accent) 20%, var(--border));
+    box-shadow: var(--shadow-sm);
+}
+
+/* В элементах списка — текст и автор в первом столбце, кнопка во втором */
+.favorites__list-item > .blockquote__text,
+.favorites__list-item > .blockquote__author {
+    grid-column: 1;
+}
+
+.favorites__list-item > .button {
+    grid-column: 2;
+    align-self: start;
+}
+
+/* Если у элемента есть также класс .blockquote — используем его оформление, без дублирования */
+.favorites__list-item.blockquote {
+    background: transparent;
+    box-shadow: none;
+}
+
+.favorite-text {
+    padding-inline-start: 12px;
+    border-inline-start: 3px solid rgba(255, 134, 48, 0.35);
+    color: var(--text);
+    font-size: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (width <= 520px) {
+    .section {
+        padding-block: 16px;
+        padding-inline: 16px;
+    }
+
+    .button {
+        inline-size: 100%;
+    }
+
+    .favorites__list-item {
+        grid-template-columns: 1fr;
+    }
+
+    .favorites__list-item > .button {
+        grid-column: 1;
+    }
+}

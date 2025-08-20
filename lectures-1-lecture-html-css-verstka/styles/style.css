@@ -1,0 +1,265 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    width: 768px;
+    min-height: 100vh;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.content__section {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 39px;
+}
+
+.content__section_theme_dark {
+    color: #fff;
+    background-color: #2F2C45;
+}
+
+.content__section_theme_bright {
+    color: #000;
+    background-color: #F2C94C;
+}
+
+.content__section-title {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.content__section-title_type_accent {
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.content__section-text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+    line-height: 1.2;
+    border-bottom: 1px solid currentColor;
+    font-family: Inter, sans-serif;
+}
+
+.logo {
+    width: 83px;
+    height: 16px;
+}
+
+.content__accent_color_success {
+    color: #589F46;
+}
+
+.content__accent_color_important {
+    color: #7125BC;
+}
+
+.header {
+    background-color: #131313;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 24px 39px 26px;
+}
+
+.header__navigation-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    list-style: none;
+}
+
+.header__link_active {
+    border-bottom-color: transparent;
+}
+
+.hero {
+    align-items: center;
+    padding-top: 116px;
+    padding-bottom: 116px;
+}
+
+.hero__title {
+    line-height: 1;
+}
+
+.intro {
+    gap: 30px;
+}
+
+.benefits {
+    gap: 40px;
+}
+
+.benefits__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 30px;
+    list-style: none;
+}
+
+.benefits__link {
+    text-decoration: none;
+}
+
+.benefits__card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 180px 30px 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 330px;
+    background-color: #EDF0F9;
+    color: #000;
+    min-height: 605px;
+    position: relative;
+}
+
+.benefits__card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-position-y: 20px;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 180px;
+}
+
+.benefits__card_type_dots::before {
+    background-image: url(../images/dots.svg);
+    background-color: #F6C055;
+}
+
+.benefits__card_type_butterfly::before {
+    background-image: url(../images/butterfly.svg);
+    background-color: #5493CE;
+}
+
+.benefits__card_type_stairs::before {
+    background-image: url(../images/stairs.svg);
+    background-color: #94D384;
+}
+
+.benefits__card_type_warm::before {
+    background-image: url(../images/warm.svg);
+    background-color: #555680;
+}
+
+.benefits__title {
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.benefits__text {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.advices {
+    gap: 30px;
+}
+
+.advices__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+}
+
+.advices__list-item {
+    padding-left: 30px;
+    position: relative;
+}
+
+.advices__list-item::before {
+    content: "\2014";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+}
+
+.advices__span-accent {
+    font-weight: 700;
+}
+
+.footer__content {
+    background-color: #131313;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 24px 39px 26px;
+}
+
+.footer__list-socials {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.footer__copyright {
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.2;
+    width: 100%;
+    color: #000;
+    background-color: #fff;
+    text-transform: uppercase;
+}
+
+.footer__copyright-trademark {
+    color: #3F2AFF;
+}

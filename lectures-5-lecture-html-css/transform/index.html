@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Трансформации</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .transform-example {
+            display: flex;
+            gap: 20px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #007bff;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .rotate {
+            transform: rotate(45deg);
+        }
+
+        .scale {
+            transform: scale(1.5);
+        }
+
+        .skew {
+            transform: skew(20deg, 10deg);
+        }
+
+        .translate {
+            transform: translate(50px, 20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="transform-example">
+        <div class="box">
+            <p>Без трансформации</p>
+        </div>
+        <div class="box rotate">
+            <p>Поворот</p>
+        </div>
+        <div class="box scale">
+            <p>Масштабирование</p>
+        </div>
+        <div class="box skew">
+            <p>Наклон</p>
+        </div>
+        <div class="box translate">
+            <p>Перемещение</p>
+        </div>
+    </div>
+</body>
+</html>

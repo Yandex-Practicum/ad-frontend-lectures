@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ру">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор случайных цитат</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#FF8630">
+</head>
+<body class="root">
+<header class="header">
+    <h1 class="header__title">Генератор цитат</h1>
+</header>
+<main class="content" id="quote-generator">
+    <section class="section generator">
+        <div class="section__content blockquote">
+            <blockquote class="blockquote__text" cite="#" id="quote-text">
+                Нажмите кнопку, чтобы сгенерировать цитату.
+            </blockquote>
+            <p class="blockquote__author" id="quote-author"></p>
+        </div>
+
+        <div class="section__footer">
+            <button class="button" type="button" id="generate-btn">Сгенерировать цитату</button>
+            <button class="button" type="button" id="add-to-favorites-btn">Добавить в избранное</button>
+        </div>
+    </section>
+    <section class="section favorites">
+        <h2 class="section__title">Избранные цитаты</h2>
+
+        <ul class="favorites__list" id="favorites-list"></ul>
+
+        <button class="button button_type_secondary" type="button" id="clear-favorites-btn">Очистить избранное</button>
+    </section>
+</main>
+
+<!-- Шаблон для элемента списка избранных цитат -->
+<template id="favorite-template">
+    <li class="favorites__list-item blockquote">
+        <blockquote class="blockquote__text" cite="#"></blockquote>
+        <button class="button button_type_secondary button_type_remove-quote" type="button">Удалить</button>
+    </li>
+</template>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Псевдоэлемент у текста</title>
+    <style>
+        /* стили для псевдоэлемента */
+        .text {
+            padding: 150px 0 0 30px;
+            position: relative;
+        }
+
+        .text::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0; /* растягивает на всю ширину */
+            top: 0;
+            height: 136px;
+            /* Для более удобной демонстрации используем инлайновую вставку вместо адреса  */
+            background-image: url("data:image/svg+xml,%3Csvg width='1110' height='136' viewBox='0 0 1110 136' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M325.768 4.67302L15.4061 130.956H350V136H0V2.33651H5.03597V126.745L114.718 0.679649L118.515 3.99335L11.3544 127.16L323.872 0L325.768 4.67302Z' fill='white'/%3E%3Ccircle cx='390' cy='38' r='10' fill='%23D35D5D'/%3E%3Ccircle cx='507' cy='48' r='10' fill='%23D35D5D'/%3E%3Ccircle cx='574' cy='126' r='10' fill='%23D35D5D'/%3E%3Ccircle cx='288' cy='92' r='10' fill='%23D35D5D'/%3E%3Ccircle cx='153' cy='10' r='10' fill='%23D35D5D'/%3E%3Ccircle cx='627' cy='10' r='10' fill='%23D35D5D'/%3E%3Ccircle cx='838' cy='92' r='10' fill='%23D35D5D'/%3E%3Ccircle cx='10' cy='10' r='10' transform='matrix(1 0 0 -1 888 58)' fill='%23D35D5D'/%3E%3Ccircle cx='10' cy='10' r='10' transform='matrix(1 0 0 -1 984 30)' fill='%23D35D5D'/%3E%3Ccircle cx='10' cy='10' r='10' transform='matrix(1 0 0 -1 1090 50)' fill='%23D35D5D'/%3E%3Ccircle cx='10' cy='10' r='10' transform='matrix(1 0 0 -1 1038 136)' fill='%23D35D5D'/%3E%3Ccircle cx='10' cy='10' r='10' transform='matrix(1 0 0 -1 778 20)' fill='%23D35D5D'/%3E%3C/svg%3E%0A");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* остальные стили */
+
+        body {
+            background-color: #ACBACC;
+            margin: 0;
+            padding: 50px 30px;
+        }
+
+        .text {
+            font-size: 50px;
+            margin: 10px 0 0;
+            max-width: 1100px;
+        }
+    </style>
+</head>
+<body>
+    <p class="text">
+        Креативность – это способность придумывать нестандартные идеи, находить новые подходы и решения в определенной сфере деятельности. Развитие креативности особенно важно для разработчиков, потому что работа в этой сфере требует быстрого анализа и решения проблем.
+    </p>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <title>Валидация форм</title>
+</head>
+<body>
+  <header class="header">
+    <img src="https://pictures.s3.yandex.net/frontend-developer/dom_bom/logo.svg" alt="" class="header__logo">
+    <p class="header__logo-sub">Валидация форм</p>
+  </header>
+  <main class="container">
+    <div class="cover">
+      <div class="cover__image"></div>
+      <h1 class="cover__heading">Формы</h1>
+    </div>
+    <div class="block">
+      <!-- Здесь будет код -->
+      <form id="form" name="register" novalidate action="http://httpbin.org/post" method="POST">
+        <h3>Форма регистрации</h3>
+        <div class="input">
+          <div class="input-container "> 
+            <input id="username" required name="username" placeholder="Имя пользователя" class="input__text input__text_login">
+            <span id="error-username" class="error-message"></span>
+          </div>
+          <div class="input-container">
+            <input id="email" required type="email" name="email" placeholder="email" class="input__text input__text_email">
+            <span id="error-email" class="error-message error-message__hidden"></span>
+          </div>
+          <div class="input-container">
+            <input id="password" required minlength="6" type="password" name="password" placeholder="Пароль" class="input__text input__text_password">
+            <span id="error-password" class="error-message error-message__hidden"></span>
+          </div>
+          <div class="input-container">
+            <input id="passwordRepeat" type="password" required minlength="6" name="passwordRepeat" placeholder="Повтор пароля" class="input__text input__text_password">
+            <span id="error-passwordRepeat" class="error-message error-message__hidden"></span>
+          </div>
+        </div>
+        <div>
+          <span id="success-message" class="success-message">
+            Валидация успешно пройдена! 
+          </span>
+          <button id="submit" class="input__btn input__btn_add" type="submit">
+            Зарегистрироваться
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
